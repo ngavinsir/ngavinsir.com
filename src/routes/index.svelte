@@ -27,7 +27,7 @@
   </h2>
   <div class="flex font-inter text-primary-5 font-medium text-base sm:text-lg">
     <a
-      rel="prefetch"
+      sapper:prefetch
       href="/blog"
       class="hover:underline px-4 sm:px-8 py-6 sm:py-12"> Blog </a>
     <a
@@ -41,7 +41,7 @@
       href="https://www.linkedin.com/in/ngavinsiregar/"
       class="hover:underline px-4 sm:px-8 py-6 sm:py-12"> Linkedin </a>
     <!-- <a
-      rel="prefetch"
+      sapper:prefetch
       href="/project"
       class="hover:underline px-4 sm:px-8 py-12"> Project </a> -->
   </div>

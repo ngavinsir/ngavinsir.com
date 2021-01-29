@@ -13,7 +13,7 @@
 </script>
 
 <a
-  rel="prefetch"
+  sapper:prefetch
   href={`blog/${slug}`}
   class="border-2 border-grayscale-1 hover:border-primary-3 rounded-lg p-3 sm:p-5 w-full">
   <span class="text-lg sm:text-xl text-grayscale-4 font-semibold">
