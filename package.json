@@ -16,6 +16,7 @@
     "gray-matter": "^4.0.2",
     "polka": "next",
     "sirv": "1.0.6",
+    "svelte-seo": "^1.1.0",
     "tinytime": "^0.2.6"
   },
   "devDependencies": {

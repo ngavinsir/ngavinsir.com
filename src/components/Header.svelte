@@ -1,7 +1,7 @@
-<div class="sticky top-0">
+<div class="sticky top-0 z-10">
   <div
-    style="width: 65ch"
-    class="max-w-full mx-auto bg-white flex flex-row p-4 items-center">
+    style="width: 74ch"
+    class="max-w-full mx-auto bg-white flex flex-row px-4 py-2 items-center">
     <a rel="prefetch" href="/">
       <img
         class="rounded-full max-w-full w-12 h-12"
@@ -9,10 +9,19 @@
         alt="Nathanael Gavin Siregar" />
     </a>
     <div
-      class="ml-auto flex flex-row space-x-5 font-inter text-primary-5 font-medium text-base">
-      <a rel="prefetch" href="/about" class="hover:underline"> About </a>
+      class="ml-auto flex flex-row space-x-6 font-inter text-primary-5 font-medium text-base">
       <a rel="prefetch" href="/blog" class="hover:underline"> Blog </a>
-      <a rel="prefetch" href="/project" class="hover:underline"> Project </a>
+      <a
+        target="_blank"
+        rel="noopener"
+        href="https://www.github.com/ngavinsir"
+        class="hover:underline"> Github </a>
+      <a
+        target="_blank"
+        rel="noopener"
+        href="https://www.linkedin.com/in/ngavinsiregar/"
+        class="hover:underline"> Linkedin </a>
+      <!-- <a rel="prefetch" href="/project" class="hover:underline"> Project </a> -->
     </div>
   </div>
 </div>

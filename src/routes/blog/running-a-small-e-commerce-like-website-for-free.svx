@@ -6,7 +6,6 @@ categories:
   - svelte
   - sapper
 layout: blog
-preview: utilizing jamstack architecture to have a fully working small e-commerce-like website for free with sapper, tailwind, forestry, vercel, and cloudinary
 ---
 
 As an undergraduate student in one of the universities in Indonesia, we are mostly obligated to

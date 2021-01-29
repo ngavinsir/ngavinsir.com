@@ -1,4 +1,5 @@
 <script>
+  import SvelteSeo from "svelte-seo";
   import tinytime from "tinytime";
 
   export let title;
@@ -10,6 +11,8 @@
 
   $: parsedDate = dateStamp.render(new Date(date));
 </script>
+
+<SvelteSeo {title} />
 
 <div class="py-8 px-4 sm:px-8 font-inter">
   <div class="max-w-full mx-auto text-center" style="width: 73ch;">
