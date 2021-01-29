@@ -1,0 +1,81 @@
+---
+title: Running a Small E-Commerce-like Website for Free
+date: "2020-08-26T08:26:25+00:00"
+categories:
+  - jamstack
+  - svelte
+  - sapper
+layout: blog
+preview: utilizing jamstack architecture to have a fully working small e-commerce-like website for free with sapper, tailwind, forestry, vercel, and cloudinary
+---
+
+As an undergraduate student in one of the universities in Indonesia, we are mostly obligated to
+participate in a community empowerment program, where we are supposed to help the locals by applying our
+knowledge. Usually, we have to physically be in the community area to take part in this program, but
+because of the covid pandemic, the program was held online.
+
+There were several problems that can be solved, so we divided the tasks among multiple people. My team
+got a task to help the locals to promote their products and villas online. This problem is fascinating to
+be solved because they had tried to publish their products and villas on mainstream e-commerce platforms,
+but it’s not easy to comply with all the rules. So there are only a few products that can be promoted on
+those platforms. After several discussions with the locals and my team, we decided to launch and manage
+our own website to promote everything about this place.
+
+Then, we planned everything that we want to display on the website. We want to promote four types of
+items on the website: local crafts (sculpture, batik, wood crafts, etc.), villas, regional destinations,
+and vacation packages. We also experimented on the landing page’s design so that it can be attractive and
+appealing to potential tourists. Additionally, we added a route guide on how to get to the place by any
+kind of public transports (bus, angkot, motorcycle, commuter rail, etc.). The guide includes the schedule
+for each public transportation and the fares.
+
+Initially, we planned to host all the data that needs to be displayed on the website in a relational
+database (PostgreSQL) and manage the contents through a simple CMS like WordPress or a more modern CMS
+like Strapi. Since we have to rent a server to host those CMS, we decided to research on the alternatives
+that can be used for free and without the need to rent a server. After thorough exploration, we found out
+about git-based CMS, a CMS that utilizes a git server to store all the content information. There are
+several services that offer a git-based CMS system, but we chose Forestry because we think it has good
+UI/UX, and it’s more mature than the alternatives. Forestry stores all of the content in a Github repo,
+so we can have a fully working CMS for free.
+
+After that, we have to decide what technology we will use for the frontend. It’s really exciting for me
+to do a small project like this because I can try and validate new cutting-edge technology. Some months
+before, I discovered a cool talk about web reactivity by Rich Harris, the creator of the Svelte framework
+([Rethinking Reactivity](https://www.youtube.com/watch?v=AdNJ3fydeao)). Well, it’s more of a language
+than a framework, Rich Harris clarifies more on that
+[here](https://gist.github.com/Rich-Harris/0f910048478c2a6505d1c32185b61934). What makes it different
+than the other UI framework like React or Vue is that Svelte shifts the work of the runtime in the
+browser into a compile step that happens when you build your app. So, Svelte apps can come with
+drastically smaller bundle sizes than the others because there is no overhead for the framework runtime.
+
+<div class="relative" style="padding-bottom: 56.25%">
+  <iframe
+    title="Rich Harris - Rethinking reactivity"
+    class="absolute inset-0 h-full w-full"
+    src="https://www.youtube.com/embed/AdNJ3fydeao"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  ></iframe>
+</div>
+
+Since we want the website to be easily discoverable by SEO, there are two technologies to choose
+from: server-side rendered (SSR) website or statically generated website. Then, I stumble upon a
+relatively new paradigm called Jamstack. Jamstack is a web architecture consisting of a Javascript
+framework, Static Site Generator, Headless CMS, and Content Delivery Network (CDN). The term was first
+popularized by Matt Biilmann, the CEO of Netlify. So, we landed on Sapper, a framework based on Svelte;
+it’s kind of like Next.js to React or Nuxt.js to Vue. Sapper supports two types of build; server-side
+rendered and statically generated. So, these are the website’s tech stack:
+
+1. Sapper (Static Site Generator)
+2. Forestry (Headless CMS)
+3. Vercel (CDN)
+
+We think this is really awesome because we can run a small e-commerce kind of website for free. Every time the admin updates the content through the CMS, Forestry will update the file that stored the specific content, located in the Github repo. Then, Vercel will detect the commit and rebuild the website by respecting all the new updates. This way, the website will be fast to load because it’s statically generated, and potential customers can quickly discover the website through the search engine. We think SEO is critical for marketing, so we care deeply about this and optimize it extensively until it reaches the score of 100 at [web.dev/measure](https://www.web.dev/measure).
+
+I think Sapper is fantastic because it’s based on Svelte and it’s more mature than the alternatives. But there is a catch, it’s still in early development, so it’s not stable yet and not recommended for a big serious project. The one key feature that’s missing is incremental static regeneration, which is available on the Next.js framework. I think it’s essential for a website with a significant number of pages. If there is no incremental static regeneration, you have to rebuild the whole website every time you want to update some content on the website. Imagine, if you have 100k page on your website, it will take forever just to update one page.
+
+The next thing that needs to be figured out is image storage. There must be at least one image to showcase a product, so this is important for an e-commerce-like website. Then, we discover Cloudinary, which is also promoted by Forestry. It’s incredible because the free plan is very generous. The website barely used 33% of the limit. You can also alter the image’s size on the fly by putting the appropriate setting on the image’s URL.
+
+I also use Tailwind, a utility-first CSS framework, for the styling part of the website. I already used it before on a previous project, and I’m delighted with the workflow because it’s convenient to use, and it’s really easy to keep the design consistent. It’s created by Adam Wathan and Steve Schoger. They are the author of the Refactoring UI book, which I think is a must-read for every front-end developers because it’s really concise and beautifully written. If you can’t buy the book, you can read a sneak peek of it on this [medium article](https://medium.com/refactoring-ui/7-practical-tips-for-cheating-at-design-40c736799886).
+
+The website: [bufferzonetanjunglesung.com](https://www.bufferzonetanjunglesung.com)
