@@ -8,7 +8,7 @@
   Universitas Gadjah Mada" />
 
 <div
-  class="flex flex-col items-center justify-center w-full min-h-screen px-1 sm:px-0 pb-16 sm:pb-32">
+  class="flex flex-col items-center justify-center w-full pt-8 px-1 sm:px-0 pb-16 sm:pb-32">
   <img
     class="rounded-full max-w-full"
     style="height: 192px; width: 192px"
