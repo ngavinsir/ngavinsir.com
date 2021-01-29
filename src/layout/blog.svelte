@@ -5,6 +5,7 @@
   export let title;
   export let date;
   export let categories;
+  export let slug;
 
   const dateStamp = tinytime("{MMMM} {DD}, {YYYY}");
   let parsedDate = "";
@@ -12,7 +13,21 @@
   $: parsedDate = dateStamp.render(new Date(date));
 </script>
 
-<SvelteSeo {title} />
+<SvelteSeo
+  {title}
+  canonical={"https://ngavinsir.com/blog/" + slug}
+  openGraph={{
+    type: "article",
+    title: title,
+    url: "https://ngavinsir.com/blog/" + slug,
+    article: {
+      publishedTime: date,
+      modifiedTime: date,
+      expirationTime: date,
+      authors: ["Nathanael Gavin"],
+      tags: categories,
+    },
+  }} />
 
 <div class="py-8 px-4 sm:px-8 font-inter">
   <div class="max-w-full mx-auto text-center" style="width: 73ch;">
